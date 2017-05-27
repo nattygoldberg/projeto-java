@@ -53,7 +53,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         txtNomeCliente.setToolTipText("");
         txtNomeCliente.setName(""); // NOI18N
@@ -316,7 +316,7 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             cli.setCpf(txtCpf.getText());
             cli.setNome(txtNomeCliente.getText());
             cli.setLogradouro(txtLogradouro.getText());
-            cli.setNome(txtNumero.getText());
+            cli.setNumero(Integer.parseInt(txtNumero.getText()));
             cli.setBairro(txtBairro.getText());
             cli.setCidade(txtCidade.getText());
             cli.setEstado(txtEstado.getText());

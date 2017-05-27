@@ -321,9 +321,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             cli.setBairro(txtBairro.getText());
             cli.setCidade(txtCidade.getText());
             cli.setEstado(txtEstado.getText());
-            cli.setCep(8);
+            cli.setCep(Integer.parseInt(txtCep.getText()));
             cli.setEmail(txtEmail.getText());
-            cli.setTelefone(11);
+            cli.setTelefone(Integer.parseInt(txtTelefone.getText()));
             
             DadosCliente dados = new DadosCliente();
             dados.cadastrar(cli);

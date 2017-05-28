@@ -43,42 +43,31 @@ public class DadosCliente extends Conexao {
          desconectar();
     }
     
- 
-     
+
      public ArrayList<Cliente> listar() throws Exception {
 
-        ArrayList<Cliente> retorno = new ArrayList<>();
-        try {
-            Statement conex = conectar();
-            String sql = "SELECT cpf, nome, logradouro, numero, bairro, cidade, estado, cep, email, telefone FROM cliente";
-
+        ArrayList<Cliente> listaclientes = new ArrayList<>();
+        String sql = "SELECT cpf, nome, logradouro, numero, bairro, cidade, estado, cep, email, telefone FROM cliente";
+        PreparedStatement cmd = this.conectarComParametros(sql);
             //executando a instrução sql
-            ResultSet rs = conex.executeQuery(sql);
-            while (rs.next()) {
+            ResultSet leitor = cmd.executeQuery(sql);
+            while (leitor.next()) {
                 Cliente c = new Cliente();
-                c.setNome(rs.getString("nome"));
-                c.setCpf(rs.getString("cpf"));
-                c.setLogradouro(rs.getString("logradouro"));
-                c.setNumero(rs.getInt("numero"));
-                c.setBairro(rs.getString("bairro"));
-                c.setCidade(rs.getString("cidade"));
-                c.setEstado(rs.getString("estado"));
-                c.setCep(rs.getInt("cep"));
-                c.setEmail(rs.getString("email"));
-                c.setTelefone(rs.getInt("telefone"));
-                
-                retorno.add(c);
+                c.setNome(leitor.getString("nome"));
+                c.setCpf(leitor.getString("cpf"));
+                c.setLogradouro(leitor.getString("logradouro"));
+                c.setNumero(leitor.getInt("numero"));
+                c.setBairro(leitor.getString("bairro"));
+                c.setCidade(leitor.getString("cidade"));
+                c.setEstado(leitor.getString("estado"));
+                c.setCep(leitor.getInt("cep"));
+                c.setEmail(leitor.getString("email"));
+                c.setTelefone(leitor.getInt("telefone"));
+               listaclientes.add(c);
             }
-            //fechando a conexão com o banco de dados
-            desconectar();
+            return listaclientes;
+                  
 
-        } catch (SQLException e) {
-            //caso haja algum erro nesse método será levantada esta exceção
-            throw new Exception("Erro ao executar a seleção de clientes: " + e.getMessage());
-        }
-        //fechando a conexão com o banco de dados
-        desconectar();
-        return retorno;
      }
    
 }

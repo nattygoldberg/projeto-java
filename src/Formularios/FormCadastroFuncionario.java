@@ -49,7 +49,7 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
         txtEmailFuncionario = new javax.swing.JTextField();
         btnCadastrarFuncionario = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setText("Nome:");
         jLabel1.setToolTipText("");

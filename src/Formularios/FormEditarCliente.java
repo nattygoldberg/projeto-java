@@ -11,15 +11,29 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Natália
+ * @author Candido
  */
-public class FormCadastroCliente extends javax.swing.JFrame {
+public class FormEditarCliente extends javax.swing.JFrame {
 
     /**
-     * Creates new form CadastroCliente
+     * Creates new form FormEditarCliente
      */
-    public FormCadastroCliente() {
+    public FormEditarCliente(Cliente cli) {
         initComponents();
+        
+        txtNomeCliente.setText(cli.getNome());
+        txtCpf.setText(cli.getCpf());
+        txtEmail.setText(cli.getEmail());
+        txtBairro.setText(cli.getBairro());
+        txtCidade.setText(cli.getCidade());
+        txtLogradouro.setText(cli.getLogradouro());
+        txtEstado.setText(cli.getEstado());
+        txtNumero.setText(String.valueOf(cli.getNumero()));
+        txtCep.setText(String.valueOf(cli.getCep()));
+        txtTelefone.setText(String.valueOf(cli.getTelefone()));
+        
+        
+        
     }
 
     /**
@@ -31,106 +45,35 @@ public class FormCadastroCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtNomeCliente = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        txtCpf = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        txtLogradouro = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        txtEstado = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txtCidade = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        txtCep = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txtTelefone = new javax.swing.JTextField();
+        txtLogradouro = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
+        txtNumero = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        btnCadastrar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jButtonClienteEdi = new javax.swing.JButton();
+        txtEstado = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         txtBairro = new javax.swing.JTextField();
+        txtCidade = new javax.swing.JTextField();
+        txtNomeCliente = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        txtCep = new javax.swing.JTextField();
+        txtCpf = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        txtNomeCliente.setToolTipText("");
-        txtNomeCliente.setName(""); // NOI18N
-        txtNomeCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNomeClienteActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Nome:");
-        jLabel1.setToolTipText("");
-
-        txtCpf.setToolTipText("");
-        txtCpf.setName(""); // NOI18N
-        txtCpf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCpfActionPerformed(evt);
-            }
-        });
+        jLabel7.setText("CEP:");
+        jLabel7.setToolTipText("");
 
         jLabel2.setText("Cpf:");
         jLabel2.setToolTipText("");
-
-        txtLogradouro.setToolTipText("");
-        txtLogradouro.setName(""); // NOI18N
-        txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLogradouroActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Logradouro:");
-        jLabel3.setToolTipText("");
-
-        txtNumero.setToolTipText("");
-        txtNumero.setName(""); // NOI18N
-        txtNumero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNumeroActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Numero:");
-        jLabel4.setToolTipText("");
-
-        txtEstado.setToolTipText("");
-        txtEstado.setName(""); // NOI18N
-        txtEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtEstadoActionPerformed(evt);
-            }
-        });
-
-        jLabel5.setText("Estado:");
-        jLabel5.setToolTipText("");
-
-        txtCidade.setToolTipText("");
-        txtCidade.setName(""); // NOI18N
-        txtCidade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCidadeActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setText("Cidade:");
-        jLabel6.setToolTipText("");
-
-        txtCep.setToolTipText("");
-        txtCep.setName(""); // NOI18N
-        txtCep.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCepActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setText("CEP:");
-        jLabel7.setToolTipText("");
 
         txtTelefone.setToolTipText("");
         txtTelefone.setName(""); // NOI18N
@@ -140,8 +83,19 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        txtLogradouro.setToolTipText("");
+        txtLogradouro.setName(""); // NOI18N
+        txtLogradouro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLogradouroActionPerformed(evt);
+            }
+        });
+
         jLabel8.setText("Telefone:");
         jLabel8.setToolTipText("");
+
+        jLabel3.setText("Logradouro:");
+        jLabel3.setToolTipText("");
 
         txtEmail.setToolTipText("");
         txtEmail.setName(""); // NOI18N
@@ -151,24 +105,84 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             }
         });
 
+        txtNumero.setToolTipText("");
+        txtNumero.setName(""); // NOI18N
+        txtNumero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroActionPerformed(evt);
+            }
+        });
+
         jLabel9.setText("Email:");
         jLabel9.setToolTipText("");
 
-        btnCadastrar.setText("cadastrar");
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+        jLabel4.setText("Numero:");
+        jLabel4.setToolTipText("");
+
+        jButtonClienteEdi.setText("Salvar");
+        jButtonClienteEdi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
+                jButtonClienteEdiActionPerformed(evt);
+            }
+        });
+
+        txtEstado.setToolTipText("");
+        txtEstado.setName(""); // NOI18N
+        txtEstado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEstadoActionPerformed(evt);
             }
         });
 
         jLabel10.setText("Bairro:");
         jLabel10.setToolTipText("");
 
+        jLabel5.setText("Estado:");
+        jLabel5.setToolTipText("");
+
         txtBairro.setToolTipText("");
         txtBairro.setName(""); // NOI18N
         txtBairro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBairroActionPerformed(evt);
+            }
+        });
+
+        txtCidade.setToolTipText("");
+        txtCidade.setName(""); // NOI18N
+        txtCidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCidadeActionPerformed(evt);
+            }
+        });
+
+        txtNomeCliente.setToolTipText("");
+        txtNomeCliente.setName(""); // NOI18N
+        txtNomeCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeClienteActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Cidade:");
+        jLabel6.setToolTipText("");
+
+        jLabel1.setText("Nome:");
+        jLabel1.setToolTipText("");
+
+        txtCep.setToolTipText("");
+        txtCep.setName(""); // NOI18N
+        txtCep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCepActionPerformed(evt);
+            }
+        });
+
+        txtCpf.setToolTipText("");
+        txtCpf.setName(""); // NOI18N
+        txtCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCpfActionPerformed(evt);
             }
         });
 
@@ -220,9 +234,9 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                                     .addComponent(jLabel10)
                                     .addComponent(txtBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(btnCadastrar)))
-                .addContainerGap(68, Short.MAX_VALUE))
+                        .addGap(172, 172, 172)
+                        .addComponent(jButtonClienteEdi)))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -268,54 +282,34 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                     .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(btnCadastrar)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addComponent(jButtonClienteEdi)
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteActionPerformed
+    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNomeClienteActionPerformed
-
-    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCpfActionPerformed
+    }//GEN-LAST:event_txtTelefoneActionPerformed
 
     private void txtLogradouroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLogradouroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtLogradouroActionPerformed
 
-    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtNumeroActionPerformed
-
-    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEstadoActionPerformed
-
-    private void txtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCidadeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCidadeActionPerformed
-
-    private void txtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCepActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCepActionPerformed
-
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
-
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
 
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+    private void txtNumeroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNumeroActionPerformed
+
+    private void jButtonClienteEdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteEdiActionPerformed
         // TODO add your handling code here:
         try {
             Cliente cli = new Cliente();
-            
+
             cli.setCpf(txtCpf.getText());
             cli.setNome(txtNomeCliente.getText());
             cli.setLogradouro(txtLogradouro.getText());
@@ -326,19 +320,39 @@ public class FormCadastroCliente extends javax.swing.JFrame {
             cli.setCep(Integer.parseInt(txtCep.getText()));
             cli.setEmail(txtEmail.getText());
             cli.setTelefone(Integer.parseInt(txtTelefone.getText()));
-            
+
             DadosCliente dados = new DadosCliente();
-            dados.cadastrar(cli);
-            
-            JOptionPane.showMessageDialog(rootPane, "Cliente cadastrado com sucesso.");
+            dados.editar(cli);
+
+            JOptionPane.showMessageDialog(rootPane, "Cliente atualizado com sucesso.");
         } catch (Exception ex){
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
-    }//GEN-LAST:event_btnCadastrarActionPerformed
+    }//GEN-LAST:event_jButtonClienteEdiActionPerformed
+
+    private void txtEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEstadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEstadoActionPerformed
 
     private void txtBairroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBairroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtBairroActionPerformed
+
+    private void txtCidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCidadeActionPerformed
+
+    private void txtNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeClienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeClienteActionPerformed
+
+    private void txtCepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCepActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCepActionPerformed
+
+    private void txtCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCpfActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,27 +371,26 @@ public class FormCadastroCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormEditarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormEditarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormEditarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormCadastroCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormEditarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormCadastroCliente().setVisible(true);
+                new FormEditarCliente(new Cliente()).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton jButtonClienteEdi;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

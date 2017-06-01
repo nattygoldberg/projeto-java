@@ -14,6 +14,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import Formularios.FormEditarCliente;
 
 /**
  *
@@ -69,6 +70,36 @@ public class DadosCliente extends Conexao {
         }
         return listaclientes;
 
+    }
+    public void editar(Cliente cliente) throws Exception{
+        //Cliente dc = new Cliente();
+        
+        Statement conn = conectar();
+        String sql = "UPDATE cliente SET cpf=?, nome=?, logradouro=?, numero=?, bairro=?, cidade=?, estado=?, cep=?"
+                + ", email=?, telefone=? WHERE cpf=?" ;
+        PreparedStatement pst = this.conectarComParametros(sql);
+        pst.setString(1, cliente.getCpf());
+        pst.setString(2, cliente.getNome());
+        pst.setString(3, cliente.getLogradouro());
+        pst.setInt(4, cliente.getNumero());
+        pst.setString(5, cliente.getBairro());
+        pst.setString(6, cliente.getCidade());
+        pst.setString(7, cliente.getEstado());
+        pst.setInt(8, cliente.getCep());
+        pst.setString(9, cliente.getEmail());
+        pst.setInt(10, cliente.getTelefone());
+         pst.setString(11, cliente.getCpf());
+
+        //executando a instrução
+        pst.executeUpdate();
+
+        desconectar();
+                
+    }
+    public  void deletar(Cliente cliente) throws Exception{
+        Statement conn = conectar();
+        String sql = "DELETE FROM cliente WHERE cpf=" + cliente.getCpf();
+        
     }
 
 }

@@ -10,7 +10,6 @@ import ConexaoDB.DadosFuncionario;
 import classesbasicas.Cliente;
 import classesbasicas.Funcionario;
 import static java.awt.image.ImageObserver.WIDTH;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -723,17 +722,20 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jButtonFuncionarioEdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionarioEdiActionPerformed
 
-        Funcionario funcionarios = funcionarios.get(listviewFuncionario.getSelectedRow());
-        FormEditarFuncionario form = new FormEditarFuncionario(funcionario);
+        Funcionario func = funcionarios.get(listviewFuncionario.getSelectedRow());
+        FormEditarFuncionario form = new FormEditarFuncionario(func);
         form.setVisible(true);
     }//GEN-LAST:event_jButtonFuncionarioEdiActionPerformed
 
     private void jButtonFuncionarioCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionarioCadActionPerformed
         // TODO add your handling code here:
+         FormCadastroFuncionario fcf = new FormCadastroFuncionario();
+        fcf.setVisible(true);
     }//GEN-LAST:event_jButtonFuncionarioCadActionPerformed
 
     private void jButtonFuncionarioPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionarioPesqActionPerformed
         // TODO add your handling code here:
+        ListarFuncionarios();
     }//GEN-LAST:event_jButtonFuncionarioPesqActionPerformed
 
     private void textFuncionarioPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFuncionarioPesqActionPerformed

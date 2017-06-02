@@ -5,6 +5,12 @@
  */
 package Formularios;
 
+import ConexaoDB.DadosCliente;
+import ConexaoDB.DadosFuncionario;
+import classesbasicas.Cliente;
+import classesbasicas.Funcionario;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Natália
@@ -311,7 +317,27 @@ public class FormCadastroFuncionario extends javax.swing.JFrame {
 
     private void btnCadastrarFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarFuncionarioActionPerformed
         // TODO add your handling code here:
-        
+            try {
+            Funcionario fun = new Funcionario();
+            
+            fun.setCpf(txtCpfFuncionario.getText());
+            fun.setNome(txtNomeFuncionario.getText());
+            fun.setLogradouro(txtLogradouroFuncionario.getText());
+            fun.setNumero(Integer.parseInt(txtNumeroFuncionario.getText()));
+            fun.setBairro(txtBairroFuncionario.getText());
+            fun.setCidade(txtCidadeFuncionario.getText());
+            fun.setEstado(txtEstadoFuncionario.getText());
+            fun.setCep(Integer.parseInt(txtCepFuncionario.getText()));
+            fun.setEmail(txtEmailFuncionario.getText());
+            fun.setTelefone(Integer.parseInt(txtTelefoneFuncionario.getText()));
+            
+            DadosFuncionario dados = new DadosFuncionario();
+            dados.cadastrar(fun);
+            
+            JOptionPane.showMessageDialog(rootPane, "Funcionario cadastrado com sucesso.");
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
     }//GEN-LAST:event_btnCadastrarFuncionarioActionPerformed
 
     /**

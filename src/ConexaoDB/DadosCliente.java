@@ -98,7 +98,12 @@ public class DadosCliente extends Conexao {
     }
     public  void deletar(Cliente cliente) throws Exception{
         Statement conn = conectar();
-        String sql = "DELETE FROM cliente WHERE cpf=" + cliente.getCpf();
+        String sql = "DELETE FROM cliente WHERE cpf=?";
+        PreparedStatement pst = this.conectarComParametros(sql);
+        pst.setString(1, cliente.getCpf());
+        //executando a instrução
+        pst.executeUpdate();
+        desconectar();
         
     }
 

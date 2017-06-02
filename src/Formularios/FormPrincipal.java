@@ -21,13 +21,13 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     Cliente cli = new Cliente();
     ArrayList<Cliente> clientes;
-     public FormPrincipal() {
+
+    public FormPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
 
-    
-    public void ListarClientes()  {
+    public void ListarClientes() {
         try {
             DadosCliente dc = new DadosCliente();
             Cliente filtro = new Cliente();
@@ -52,8 +52,7 @@ public class FormPrincipal extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, e.getMessage(), null, WIDTH);
         }
     }
-    
-   
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -100,6 +99,17 @@ public class FormPrincipal extends javax.swing.JFrame {
         jButtonFuncionarioCad = new javax.swing.JButton();
         jButtonFuncionarioEdi = new javax.swing.JButton();
         jButtonFuncionarioDel = new javax.swing.JButton();
+        jPanel10 = new javax.swing.JPanel();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        textServiçoPesq = new javax.swing.JTextField();
+        jButtonServiçoPesq = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        listviewServiço = new javax.swing.JTable();
+        jButtonServiçoCad = new javax.swing.JButton();
+        jButtonServiçoEdi = new javax.swing.JButton();
+        jButtonServiçoDel = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -233,7 +243,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(405, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -363,7 +373,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 403, Short.MAX_VALUE))
+                .addGap(0, 112, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -434,6 +444,9 @@ public class FormPrincipal extends javax.swing.JFrame {
             }
         ));
         jScrollPane5.setViewportView(listviewFuncionario);
+        if (listviewFuncionario.getColumnModel().getColumnCount() > 0) {
+            listviewFuncionario.getColumnModel().getColumn(2).setHeaderValue("Email");
+        }
 
         jButtonFuncionarioCad.setText("Cadastrar");
         jButtonFuncionarioCad.addActionListener(new java.awt.event.ActionListener() {
@@ -493,7 +506,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 403, Short.MAX_VALUE))
+                .addGap(0, 112, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -507,11 +520,144 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("   Funcionario   ", jPanel3);
 
+        jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder("Filtros da Pesquisa "));
+
+        jLabel4.setText("serviço");
+
+        textServiçoPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textServiçoPesqActionPerformed(evt);
+            }
+        });
+
+        jButtonServiçoPesq.setText("Pesquisar");
+        jButtonServiçoPesq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonServiçoPesqActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButtonServiçoPesq)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(textServiçoPesq, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(textServiçoPesq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonServiçoPesq)
+                .addContainerGap())
+        );
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createTitledBorder("Serviços"));
+
+        listviewServiço.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Descrição", "Preço"
+            }
+        ));
+        jScrollPane6.setViewportView(listviewServiço);
+
+        jButtonServiçoCad.setText("Cadastrar");
+        jButtonServiçoCad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonServiçoCadActionPerformed(evt);
+            }
+        });
+
+        jButtonServiçoEdi.setText("Editar");
+        jButtonServiçoEdi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonServiçoEdiActionPerformed(evt);
+            }
+        });
+
+        jButtonServiçoDel.setText("Deletar");
+        jButtonServiçoDel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonServiçoDelActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addComponent(jButtonServiçoCad, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39)
+                        .addComponent(jButtonServiçoEdi, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonServiçoDel, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 24, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonServiçoCad)
+                    .addComponent(jButtonServiçoEdi)
+                    .addComponent(jButtonServiçoDel))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(112, Short.MAX_VALUE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("   Serviço   ", jPanel10);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -545,19 +691,24 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jButtonClienteDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClienteDelActionPerformed
         try {
-            String title = "Confirmação";
-            int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir este cliente?", title, JOptionPane.YES_NO_OPTION);
+            if (listviewCliente.getSelectedRow() >=0) {
 
-            if (resposta == JOptionPane.YES_OPTION) {
-                //inserir codigo para deletar o cliente
-                DadosCliente dc = new DadosCliente();
-                dc.deletar(cli);
-                JOptionPane.showMessageDialog(rootPane, "Cliente deletado com sucesso.");
-            } else if (resposta == JOptionPane.NO_OPTION) {
-                //System.exit(0);
+                String title = "Confirmação";
+                int resposta = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir este cliente?", title, JOptionPane.YES_NO_OPTION);
+
+                if (resposta == JOptionPane.YES_OPTION) {
+                    //inserir codigo para deletar o cliente
+                    cli = clientes.get(listviewCliente.getSelectedRow());
+
+                    DadosCliente dc = new DadosCliente();
+                    dc.deletar(cli);
+                    JOptionPane.showMessageDialog(rootPane, "Cliente deletado com sucesso.");
+                }
+            }else{
+                JOptionPane.showMessageDialog(rootPane, "Favor selecionar uma cliente!");
             }
 
-        } catch (Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
     }//GEN-LAST:event_jButtonClienteDelActionPerformed
@@ -603,7 +754,7 @@ public class FormPrincipal extends javax.swing.JFrame {
                 //System.exit(0);
             }
 
-        } catch (Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
     }//GEN-LAST:event_jButtonOrcamentoDelActionPerformed
@@ -621,7 +772,26 @@ public class FormPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_textOrcamentoPesqActionPerformed
 
-    
+    private void textServiçoPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textServiçoPesqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textServiçoPesqActionPerformed
+
+    private void jButtonServiçoPesqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoPesqActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonServiçoPesqActionPerformed
+
+    private void jButtonServiçoCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoCadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonServiçoCadActionPerformed
+
+    private void jButtonServiçoEdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoEdiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonServiçoEdiActionPerformed
+
+    private void jButtonServiçoDelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoDelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonServiçoDelActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -671,11 +841,19 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonOrcamentoEdi;
     private javax.swing.JButton jButtonOrcamentoEnv;
     private javax.swing.JButton jButtonOrcamentoPesq;
+    private javax.swing.JButton jButtonServiçoCad;
+    private javax.swing.JButton jButtonServiçoDel;
+    private javax.swing.JButton jButtonServiçoEdi;
+    private javax.swing.JButton jButtonServiçoPesq;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -688,12 +866,15 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable listviewCliente;
     private javax.swing.JTable listviewFuncionario;
     private javax.swing.JTable listviewOrcamento;
+    private javax.swing.JTable listviewServiço;
     private javax.swing.JTextField textClientePesq;
     private javax.swing.JTextField textFuncionarioPesq;
     private javax.swing.JTextField textOrcamentoPesq;
+    private javax.swing.JTextField textServiçoPesq;
     // End of variables declaration//GEN-END:variables
 }

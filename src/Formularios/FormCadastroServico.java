@@ -5,6 +5,12 @@
  */
 package Formularios;
 
+import ConexaoDB.DadosCliente;
+import ConexaoDB.DadosServico;
+import classesbasicas.Cliente;
+import classesbasicas.Servico;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Natália
@@ -30,7 +36,7 @@ public class FormCadastroServico extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         txtServico = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtServico1 = new javax.swing.JTextField();
+        txtValor = new javax.swing.JTextField();
         btnCadastrarNovo = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
 
@@ -67,7 +73,7 @@ public class FormCadastroServico extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
-                            .addComponent(txtServico1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -78,7 +84,7 @@ public class FormCadastroServico extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtServico1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -95,6 +101,19 @@ public class FormCadastroServico extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
+        try {
+           Servico serv = new Servico();
+            
+            serv.setDescricao(txtServico.getText());
+            serv.setValor(Float.parseFloat(txtValor.getText()));
+                        
+            DadosServico dados = new DadosServico();
+            dados.cadastrar(serv);
+            
+            JOptionPane.showMessageDialog(rootPane, "Serviço cadastrado com sucesso.");
+        } catch (Exception ex){
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
@@ -138,6 +157,6 @@ public class FormCadastroServico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtServico;
-    private javax.swing.JTextField txtServico1;
+    private javax.swing.JTextField txtValor;
     // End of variables declaration//GEN-END:variables
 }

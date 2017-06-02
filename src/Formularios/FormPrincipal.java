@@ -682,7 +682,7 @@ public class FormPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1)
                 .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
@@ -835,6 +835,8 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jButtonServiçoCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoCadActionPerformed
         // TODO add your handling code here:
+        FormCadastroServico fcs = new FormCadastroServico();
+        fcs.setVisible(true);
     }//GEN-LAST:event_jButtonServiçoCadActionPerformed
 
     private void jButtonServiçoEdiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonServiçoEdiActionPerformed

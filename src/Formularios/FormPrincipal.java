@@ -729,7 +729,7 @@ public class FormPrincipal extends javax.swing.JFrame {
 
     private void jButtonFuncionarioCadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFuncionarioCadActionPerformed
         // TODO add your handling code here:
-         FormCadastroFuncionario fcf = new FormCadastroFuncionario();
+        FormCadastroFuncionario fcf = new FormCadastroFuncionario();
         fcf.setVisible(true);
     }//GEN-LAST:event_jButtonFuncionarioCadActionPerformed
 
